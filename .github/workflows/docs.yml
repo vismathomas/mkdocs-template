@@ -2,6 +2,11 @@ name: Build and Deploy MkDocs
 on:
   push:
     branches: [ main ]
+    paths:
+      - 'docs/**'
+      - 'README.md'
+      - 'mkdocs.yml'
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -11,10 +16,17 @@ jobs:
         with:
           python-version: '3.x'
       - run: pip install mkdocs-material mkdocs-mermaid2-plugin
-      - run: mkdocs build --config-file .github/mkdocs/mkdocs.yml --clean
+
+      - name: Copy README.md as site index
+        run: cp README.md docs/index.md
+
+      - name: Build
+        run: mkdocs build --clean
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site
+
   deploy:
     needs: build
     permissions:
