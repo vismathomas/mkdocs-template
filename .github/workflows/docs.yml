@@ -1,36 +1,42 @@
-name: Build and Deploy MkDocs
-on:
-  push:
-    branches: [ main ]
-    paths:
-      - 'docs/**'
-      - 'README.md'
-      - 'mkdocs.yml'
+site_name: Project Documentation
+site_url: https://vismathomas.github.io/mkdocs-template/
+docs_dir: docs
+site_dir: site
+use_directory_urls: true
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.x'
-      - run: pip install mkdocs-material mkdocs-mermaid2-plugin
-      - name: Copy README.md as site index
-        run: cp README.md docs/index.md
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.tabs
+    - content.code.copy
+    - content.code.annotate
 
-      - name: Build
-        run: mkdocs build --clean
+plugins:
+  - search
 
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: site
+markdown_extensions:
+  - admonition
+  - footnotes
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.tabbed
+  - attr_list
 
-  deploy:
-    needs: build
-    permissions:
-      pages: write
-      id-token: write
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/deploy-pages@v4
+extra_javascript:
+  - https://unpkg.com/mermaid@10/dist/mermaid.min.js
+  - js/init-mermaid.js
+
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - Architecture: architecture.md
+  - API Reference: api-reference.md
+  - Configuration: configuration.md
+  - Performance: performance.md
+  - Deployment: deployment.md
+  - Troubleshooting: troubleshooting.md
