@@ -2,11 +2,20 @@ site_name: Project Documentation
 site_url: https://vismathomas.github.io/mkdocs-template/
 docs_dir: docs
 site_dir: site
+use_directory_urls: true
+
 theme:
   name: material
+  features:
+    - navigation.sections
+    - navigation.tabs
+    - content.code.copy
+    - content.code.annotate
+
 plugins:
   - search
   - mermaid2
+
 markdown_extensions:
   - admonition
   - footnotes
@@ -18,6 +27,7 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.tabbed
   - attr_list
+
 nav:
   - Home: index.md
   - Getting Started: getting-started.md
@@ -27,3 +37,7 @@ nav:
   - Performance: performance.md
   - Deployment: deployment.md
   - Troubleshooting: troubleshooting.md
+extra_javascript:
+  - https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs
+extra:
+  base_path: /mkdocs-template/
