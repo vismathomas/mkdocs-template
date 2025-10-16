@@ -14,7 +14,6 @@ theme:
 
 plugins:
   - search
-  - mermaid2
 
 markdown_extensions:
   - admonition
@@ -22,11 +21,15 @@ markdown_extensions:
   - tables
   - toc:
       permalink: true
-  - pymdownx.highlight
   - pymdownx.superfences
   - pymdownx.details
+  - pymdownx.highlight
   - pymdownx.tabbed
   - attr_list
+
+extra_javascript:
+  - https://unpkg.com/mermaid@10/dist/mermaid.min.js
+  - js/init-mermaid.js
 
 nav:
   - Home: index.md
@@ -37,7 +40,3 @@ nav:
   - Performance: performance.md
   - Deployment: deployment.md
   - Troubleshooting: troubleshooting.md
-extra_javascript:
-  - https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs
-extra:
-  base_path: /mkdocs-template/
