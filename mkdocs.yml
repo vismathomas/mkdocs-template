@@ -1,8 +1,8 @@
 site_name: Project Documentation
 site_url: https://<username>.github.io/<repo>/
 repo_url: https://github.com/<username>/<repo>
-docs_dir: ../../        # points to repo root
-site_dir: ../../site
+docs_dir: docs
+site_dir: site
 theme:
   name: material
   features:
