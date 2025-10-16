@@ -1,41 +1,29 @@
 site_name: Project Documentation
-site_url: https://<username>.github.io/<repo>/
-repo_url: https://github.com/<username>/<repo>
+site_url: https://vismathomas.github.io/mkdocs-template/
 docs_dir: docs
 site_dir: site
 theme:
   name: material
-  features:
-    - content.code.copy
-    - content.code.annotate
-    - navigation.sections
-    - navigation.tabs
 plugins:
   - search
-  - mermaid2    
+  - mermaid2
 markdown_extensions:
-  - pymdownx.superfences
-  - pymdownx.tabbed
-  - pymdownx.details
-  - pymdownx.highlight
-  - pymdownx.emoji
-  - attr_list
   - admonition
   - footnotes
+  - tables
   - toc:
       permalink: true
-  - pymdownx.arithmatex
-  - pymdownx.tasklist
-  - pymdownx.progressbar
-
-extra_css:
-  - styles/extra.css  # optional, for custom branding
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.tabbed
+  - attr_list
 nav:
-  - Home: README.md
-  - Getting Started: docs/getting-started.md
-  - Architecture: docs/architecture.md
-  - API Reference: docs/api-reference.md
-  - Configuration: docs/configuration.md
-  - Performance: docs/performance.md
-  - Deployment: docs/deployment.md
-  - Troubleshooting: docs/troubleshooting.md
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - Architecture: architecture.md
+  - API Reference: api-reference.md
+  - Configuration: configuration.md
+  - Performance: performance.md
+  - Deployment: deployment.md
+  - Troubleshooting: troubleshooting.md
