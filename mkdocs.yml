@@ -1,0 +1,31 @@
+site_name: Project Documentation
+site_url: https://<username>.github.io/<repo>/
+repo_url: https://github.com/<username>/<repo>
+docs_dir: .
+theme:
+  name: material
+  features:
+    - content.code.copy
+    - content.code.annotate
+    - navigation.sections
+    - navigation.tabs
+markdown_extensions:
+  - admonition
+  - footnotes
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.tabbed
+  - pymdownx.emoji
+  - attr_list
+extra_css:
+  - styles/extra.css  # optional, for custom branding
+nav:
+  - Home: README.md
+  - Architecture: architecture.md
+  - API: api.md
