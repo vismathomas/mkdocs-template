@@ -27,5 +27,10 @@ extra_css:
   - styles/extra.css  # optional, for custom branding
 nav:
   - Home: README.md
-  - Architecture: architecture.md
-  - API: api.md
+  - Getting Started: docs/getting-started.md
+  - Architecture: docs/architecture.md
+  - API Reference: docs/api-reference.md
+  - Configuration: docs/configuration.md
+  - Performance: docs/performance.md
+  - Deployment: docs/deployment.md
+  - Troubleshooting: docs/troubleshooting.md
