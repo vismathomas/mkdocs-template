@@ -2,10 +2,6 @@ name: Build and Deploy MkDocs
 on:
   push:
     branches: [ main ]
-    paths:
-      - '**/*.md'
-      - 'mkdocs.yml'
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -15,7 +11,7 @@ jobs:
         with:
           python-version: '3.x'
       - run: pip install mkdocs-material mkdocs-mermaid2-plugin
-      - run: mkdocs build --clean
+      - run: mkdocs build --config-file .github/mkdocs/mkdocs.yml --clean
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site
