@@ -15,7 +15,10 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.x'
-      - run: pip install mkdocs-material
+      - name: Install MkDocs and extensions
+        run: |
+          pip install mkdocs-material
+          pip install pymdown-extensions
       - name: Copy README.md as site index
         run: cp README.md docs/index.md
       - name: Build
