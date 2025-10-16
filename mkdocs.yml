@@ -10,20 +10,24 @@ theme:
     - content.code.annotate
     - navigation.sections
     - navigation.tabs
+plugins:
+  - search
+  - mermaid2    
 markdown_extensions:
-  - admonition
-  - footnotes
-  - tables
-  - toc:
-      permalink: true
-  - pymdownx.highlight:
-      anchor_linenums: true
-      line_spans: __span
   - pymdownx.superfences
-  - pymdownx.details
   - pymdownx.tabbed
+  - pymdownx.details
+  - pymdownx.highlight
   - pymdownx.emoji
   - attr_list
+  - admonition
+  - footnotes
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex
+  - pymdownx.tasklist
+  - pymdownx.progressbar
+
 extra_css:
   - styles/extra.css  # optional, for custom branding
 nav:

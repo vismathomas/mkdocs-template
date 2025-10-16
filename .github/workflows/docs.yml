@@ -16,7 +16,6 @@ jobs:
         with:
           python-version: '3.x'
       - run: pip install mkdocs-material mkdocs-mermaid2-plugin
-
       - name: Copy README.md as site index
         run: cp README.md docs/index.md
 
